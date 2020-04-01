@@ -117,9 +117,160 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/main.js":[function(require,module,exports) {
+})({"assets/img/allianz-arena.jpg":[function(require,module,exports) {
+module.exports = "/allianz-arena.ae83b97a.jpg";
+},{}],"assets/img/camp-nou.jpg":[function(require,module,exports) {
+module.exports = "/camp-nou.d7eb0790.jpg";
+},{}],"assets/img/eiffel-tower.jpg":[function(require,module,exports) {
+module.exports = "/eiffel-tower.61667e99.jpg";
+},{}],"assets/img/el-tunco.jpg":[function(require,module,exports) {
+module.exports = "/el-tunco.646f0327.jpg";
+},{}],"assets/img/golden-gate-bridge.jpg":[function(require,module,exports) {
+module.exports = "/golden-gate-bridge.ad915444.jpg";
+},{}],"assets/img/london.jpg":[function(require,module,exports) {
+module.exports = "/london.60abbd81.jpg";
+},{}],"assets/img/romania.jpg":[function(require,module,exports) {
+module.exports = "/romania.3b27b8df.jpg";
+},{}],"assets/img/taj-mahal.jpeg":[function(require,module,exports) {
+module.exports = "/taj-mahal.0bde165f.jpeg";
+},{}],"assets/img/thailand.jpg":[function(require,module,exports) {
+module.exports = "/thailand.b81a7366.jpg";
+},{}],"assets/img/vancouver.jpg":[function(require,module,exports) {
+module.exports = "/vancouver.33d8f733.jpg";
+},{}],"js/cards.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.images = void 0;
+
+var _allianzArena = _interopRequireDefault(require("../assets/img/allianz-arena.jpg"));
+
+var _campNou = _interopRequireDefault(require("../assets/img/camp-nou.jpg"));
+
+var _eiffelTower = _interopRequireDefault(require("../assets/img/eiffel-tower.jpg"));
+
+var _elTunco = _interopRequireDefault(require("../assets/img/el-tunco.jpg"));
+
+var _goldenGateBridge = _interopRequireDefault(require("../assets/img/golden-gate-bridge.jpg"));
+
+var _london = _interopRequireDefault(require("../assets/img/london.jpg"));
+
+var _romania = _interopRequireDefault(require("../assets/img/romania.jpg"));
+
+var _tajMahal = _interopRequireDefault(require("../assets/img/taj-mahal.jpeg"));
+
+var _thailand = _interopRequireDefault(require("../assets/img/thailand.jpg"));
+
+var _vancouver = _interopRequireDefault(require("../assets/img/vancouver.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var images = [{
+  name: 'card1',
+  image: _allianzArena.default
+}, {
+  name: 'card2',
+  image: _allianzArena.default
+}, {
+  name: 'card3',
+  image: _campNou.default
+}, {
+  name: 'card4',
+  image: _campNou.default
+}, {
+  name: 'card5',
+  image: _eiffelTower.default
+}, {
+  name: 'card6',
+  image: _eiffelTower.default
+}, {
+  name: 'card7',
+  image: _elTunco.default
+}, {
+  name: 'card8',
+  image: _elTunco.default
+}, {
+  name: 'card9',
+  image: _goldenGateBridge.default
+}, {
+  name: 'card10',
+  image: _goldenGateBridge.default
+}, {
+  name: 'card11',
+  image: _london.default
+}, {
+  name: 'card12',
+  image: _london.default
+}, {
+  name: 'card13',
+  image: _romania.default
+}, {
+  name: 'card14',
+  image: _romania.default
+}, {
+  name: 'card15',
+  image: _tajMahal.default
+}, {
+  name: 'card16',
+  image: _tajMahal.default
+}, {
+  name: 'card17',
+  image: _thailand.default
+}, {
+  name: 'card18',
+  image: _thailand.default
+}, {
+  name: 'card19',
+  image: _vancouver.default
+}, {
+  name: 'card20',
+  image: _vancouver.default
+}];
+exports.images = images;
+},{"../assets/img/allianz-arena.jpg":"assets/img/allianz-arena.jpg","../assets/img/camp-nou.jpg":"assets/img/camp-nou.jpg","../assets/img/eiffel-tower.jpg":"assets/img/eiffel-tower.jpg","../assets/img/el-tunco.jpg":"assets/img/el-tunco.jpg","../assets/img/golden-gate-bridge.jpg":"assets/img/golden-gate-bridge.jpg","../assets/img/london.jpg":"assets/img/london.jpg","../assets/img/romania.jpg":"assets/img/romania.jpg","../assets/img/taj-mahal.jpeg":"assets/img/taj-mahal.jpeg","../assets/img/thailand.jpg":"assets/img/thailand.jpg","../assets/img/vancouver.jpg":"assets/img/vancouver.jpg"}],"js/main.js":[function(require,module,exports) {
+"use strict";
+
+var _cards = require("./cards");
+
+var cards = document.querySelectorAll('.container__cards__card');
+init();
+addCardEvents(cards); //Initiate Game
+
+function init() {
+  _cards.images.sort(function () {
+    return 0.9 - Math.random();
+  });
+
+  for (var i = 0; i < cards.length; i++) {
+    var imgChild = cards[i].childNodes[1];
+    var card = document.createElement('img');
+    card.setAttribute('src', _cards.images[i].image);
+    card.className = 'container__cards__card__img';
+    cards[i].appendChild(card);
+  }
+} //Add events listeners
+
+
+function addCardEvents(elements) {
+  elements.forEach(function (element) {
+    element.addEventListener('click', function () {
+      element.classList.toggle('container__cards__card--flip-front');
+      element.classList.toggle('container__cards__card--flip-back');
+      setTimeout(function () {
+        if (element.classList.contains('container__cards__card--flip-back')) {
+          element.childNodes[1].style.visibility = 'hidden';
+          element.childNodes[3].style.visibility = 'visible';
+        } else {
+          element.childNodes[1].style.visibility = 'visible';
+          element.childNodes[3].style.visibility = 'hidden';
+        }
+      }, 360);
+    });
+  });
+}
+},{"./cards":"js/cards.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
