@@ -1,0 +1,12 @@
+.container__cards {
+  width: 58%;
+  margin: 0 auto;
+
+  &__card {
+    &__img {
+      width: 300px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+  }
+}

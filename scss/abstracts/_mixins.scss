@@ -1,0 +1,7 @@
+@mixin assignGridArea {
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      grid-area: card#{$i};
+    }
+  }
+}
