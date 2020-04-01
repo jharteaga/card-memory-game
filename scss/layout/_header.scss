@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2em;
-  margin-bottom: 1.5em;
+  padding-top: 0em;
+  margin-bottom: 1.6em;
   font-family: $font-stack;
 
   &__title {
@@ -13,6 +13,7 @@
   }
 
   &__description {
-    font-size: 1.7rem;
+    margin: 0;
+    font-size: 1.5rem;
   }
 }
