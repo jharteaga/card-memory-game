@@ -8,5 +8,14 @@ body {
   padding: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
 @import './abstracts/abstracts-dir';
 @import './layout/layout-dir';

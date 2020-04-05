@@ -1,7 +1,11 @@
-@mixin assignGridArea {
-  @for $i from 1 through 20 {
-    &:nth-child(#{$i}) {
-      grid-area: card#{$i};
-    }
+@mixin mediaMd {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 600px) {
+    @content;
   }
 }

@@ -1,5 +1,5 @@
 .container__cards {
-  width: 58%;
+  max-width: 90%;
   margin: 0 auto;
   position: relative;
 
@@ -9,6 +9,7 @@
       width: 180px;
       height: 135px;
       border-radius: 8px;
+      visibility: visible;
     }
 
     &__img {
@@ -17,6 +18,7 @@
       border-radius: 8px;
       text-align: center;
       position: absolute;
+      left: 0;
       visibility: hidden;
       transform: rotateY(180deg);
     }

@@ -1,0 +1,41 @@
+@include mediaMd {
+  .container__header {
+    text-align: center;
+  }
+  .container__cards {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@include mediaSm {
+  .container__header {
+    text-align: center;
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__description {
+      font-size: 1.4rem;
+    }
+
+    &__timer {
+      font-size: 2.3rem;
+    }
+  }
+  .container__cards {
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: 1em;
+
+    &__card {
+      &__question {
+        width: 140px;
+        height: 110px;
+      }
+
+      &__img {
+        width: 140px;
+        height: 110px;
+      }
+    }
+  }
+}
